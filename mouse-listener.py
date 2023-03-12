@@ -16,15 +16,15 @@ def on_move(x, y):
     global swiped, inGesture, move_gesture
 
     # mdeltax = x - lastx
-    mdeltay = y - lasty
+    mdeltay = int(y - lasty)
     # lastx = x
-    lasty = y
+    lasty = int(y)
     ymag = 0
     if inGesture:
         # xmag = abs(mdeltax) if abs(mdeltax) > movement_sensitivity else 0
         # if xmag > 0:
             # xdir = "right" if mdeltax > 0 else "left"
-        ymag = 0 if abs(mdeltay) < movement_sensitivity else abs(movement_sensitivity)
+        ymag = 0 if abs(mdeltay) < movement_sensitivity else int(abs(mdeltay))
 
         ydir = "none"
         if ymag > 0:
@@ -38,7 +38,7 @@ def on_move(x, y):
             swiped = True
         else:
             move_gesture = "none"
-        print(f"Gesture: {move_gesture}")
+        print(f"Gesture: {move_gesture}; Magnitude: {ymag}")
     pass
 
 
@@ -50,19 +50,20 @@ def on_click(x, y, button, pressed):
     global inGesture, gesture, swiped
 
     presstext = "pressed" if pressed else "released"
-    print(f"{button} {presstext} at {x}, {y}")
+    print(f"{button} {presstext} at {int(x)}, {int(y)}")
     if pressed:
         presstime = datetime.now()
         inGesture = True
-        startx, starty = x, y
+        startx = int(x)
+        starty = int(y)
         pass
     elif not pressed:
         releasetime = datetime.now()
         inGesture = False
-        deltax, deltay = x - startx, y - starty
-        deltax, deltay = x - startx, y - starty
-        deltats = (releasetime - presstime).seconds * 1000
-        deltatms = (releasetime - presstime).microseconds // 1000 + deltats
+        deltax = int(int(x) - startx)
+        deltay = int(int(y) - starty)
+        deltats = int((releasetime - presstime).seconds * 1000)
+        deltatms = int((releasetime - presstime).microseconds // 1000 + deltats)
         if not swiped:
             gesture = "tap" if deltatms < longtap_sensitivity else "longtap"
         elif swiped:
