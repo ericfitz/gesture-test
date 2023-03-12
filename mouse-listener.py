@@ -11,34 +11,41 @@ gesture = "none"  # Detected gesture name
 
 def on_move(x, y):
     # print(f'Pointer moved to {x}, {y}')
-    global lastx, lasty, mdeltax, mdeltay
-    mdeltax = x - lastx
+    # global lastx, mdeltax
+    global lasty, mdeltay
+
+    # mdeltax = x - lastx
     mdeltay = y - lasty
-    lastx, lasty = x, y
-    xmag = ymag = 0
-    xdir = ydir = gesture = "none"
+    # lastx = x
+    lasty = y
+    # xmag = 0
+    ymag = 0
+    # xdir = "none"
+    ydir = "none"
+    gesture = "none"
     if inGesture:
-        xmag = abs(mdeltax) if abs(mdeltax) > movement_sensitivity else 0
-        if xmag > 0:
-            xdir = "right" if mdeltax > 0 else "left"
+        # xmag = abs(mdeltax) if abs(mdeltax) > movement_sensitivity else 0
+        # if xmag > 0:
+            # xdir = "right" if mdeltax > 0 else "left"
         ymag = abs(mdeltay) if abs(mdeltay) > movement_sensitivity else 0
         if ymag > 0:
             ydir = "down" if mdeltay > 0 else "up"  # y-axis is inverted vs. cartesian
-        if ydir == "none":
+        # if ydir == "none":
+        #    gesture = (
+        #        "tap"
+        #        if xdir == "none"
+        #        else "swipe-right"
+        #        if xdir == "right"
+        #        else "swipe-left"
+        #    )
+        # if xdir == "none" and gesture == "none":
+        if gesture == "none":
             gesture = (
-                "tap"
-                if xdir == "none"
-                else "swipe-right"
-                if xdir == "right"
-                else "swipe-left"
-            )
-        if xdir == "none" and gesture == "none":
-            gesture = (
-                "tap"
-                if ydir == "none"
-                else "swipe-up"
+                "swipe-up"
                 if ydir == "up"
                 else "swipe-down"
+                if ydir == "down"
+                else "none"
             )
         # print(f'Pointer moved by {mdeltax}, {mdeltay}; direction: {xdir}, {ydir}')
         print(f"Gesture: {gesture}")
