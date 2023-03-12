@@ -1,71 +1,77 @@
 from pynput import mouse
 from datetime import datetime
 
-tap_duration_sensitivity = 100  # ms
 movement_sensitivity = 1  # pixels
 longtap_sensitivity = 1000  # ms
-lastx = lasty = 0
-inGesture = False  # True if a gesture is in progress
-gesture = "none"  # Detected gesture name
 
+# lastx = 0
+lasty = 0
+inGesture = False  # True if a gesture is in progress
+swiped = False  # True if a swipe has been detected
 
 def on_move(x, y):
     # print(f'Pointer moved to {x}, {y}')
-    global lastx, lasty, mdeltax, mdeltay
-    mdeltax = x - lastx
-    mdeltay = y - lasty
-    lastx, lasty = x, y
-    xmag = ymag = 0
-    xdir = ydir = gesture = "none"
+    # global lastx, mdeltax
+    global lasty, mdeltay
+    global swiped, inGesture, move_gesture
+
+    # mdeltax = x - lastx
+    mdeltay = int(y - lasty)
+    # lastx = x
+    lasty = int(y)
+    ymag = 0
     if inGesture:
-        xmag = abs(mdeltax) if abs(mdeltax) > movement_sensitivity else 0
-        if xmag > 0:
-            xdir = "right" if mdeltax > 0 else "left"
-        ymag = abs(mdeltay) if abs(mdeltay) > movement_sensitivity else 0
+        # xmag = abs(mdeltax) if abs(mdeltax) > movement_sensitivity else 0
+        # if xmag > 0:
+            # xdir = "right" if mdeltax > 0 else "left"
+        ymag = 0 if abs(mdeltay) < movement_sensitivity else int(abs(mdeltay))
+
+        ydir = "none"
         if ymag > 0:
-            ydir = "down" if mdeltay > 0 else "up"  # y-axis is inverted vs. cartesian
-        if ydir == "none":
-            gesture = (
-                "tap"
-                if xdir == "none"
-                else "swipe-right"
-                if xdir == "right"
-                else "swipe-left"
-            )
-        if xdir == "none" and gesture == "none":
-            gesture = (
-                "tap"
-                if ydir == "none"
-                else "swipe-up"
-                if ydir == "up"
-                else "swipe-down"
-            )
-        # print(f'Pointer moved by {mdeltax}, {mdeltay}; direction: {xdir}, {ydir}')
-        print(f"Gesture: {gesture}")
+            ydir = "down" if mdeltay > 0 else "up"  # y-axis is inverted vs. cartesian (positive = down)
+        
+        if ydir == "up":
+            move_gesture = "swipe-up"
+            swiped = True
+        elif ydir == "down":
+            move_gesture = "swipe-down"
+            swiped = True
+        else:
+            move_gesture = "none"
+        print(f"Gesture: {move_gesture}; Magnitude: {ymag}")
     pass
 
 
 def on_click(x, y, button, pressed):
-    global presstime, releasetime, startx, starty, deltax, deltay, deltats, deltatms, inGesture
+    
+    global presstime, releasetime, deltats, deltatms 
+    global startx, deltax
+    global starty, deltay
+    global inGesture, gesture, swiped
+
     presstext = "pressed" if pressed else "released"
-    print(f"{button} {presstext} at {x}, {y}")
+    print(f"{button} {presstext} at {int(x)}, {int(y)}")
     if pressed:
         presstime = datetime.now()
         inGesture = True
-        startx, starty = x, y
+        startx = int(x)
+        starty = int(y)
         pass
     elif not pressed:
         releasetime = datetime.now()
         inGesture = False
-        deltax, deltay = x - startx, y - starty
-        deltats = (releasetime - presstime).seconds * 1000
-        deltatms = (releasetime - presstime).microseconds // 1000 + deltats
-        if gesture == "tap":
-            if deltatms > longtap_sensitivity:
-                gesture = "longtap"
+        deltax = int(int(x) - startx)
+        deltay = int(int(y) - starty)
+        deltats = int((releasetime - presstime).seconds * 1000)
+        deltatms = int((releasetime - presstime).microseconds // 1000 + deltats)
+        if not swiped:
+            gesture = "tap" if deltatms < longtap_sensitivity else "longtap"
+        elif swiped:
+            gesture = "swipe"
         print(
             f"Movement vector {deltax}, {deltay} in {deltatms} ms; Gesture: {gesture}"
         )
+        swiped = False
         pass
 
 
