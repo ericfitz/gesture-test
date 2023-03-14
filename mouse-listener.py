@@ -1,3 +1,5 @@
+#!/opt/homebrew/bin/python3
+
 from pynput import mouse
 from datetime import datetime
 

@@ -1,0 +1,201 @@
+Button.left pressed at 893, 605
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: swipe-up; Magnitude: 1
+Gesture: swipe-up; Magnitude: 2
+Gesture: swipe-up; Magnitude: 2
+Gesture: swipe-up; Magnitude: 4
+Gesture: swipe-up; Magnitude: 6
+Gesture: swipe-up; Magnitude: 11
+Gesture: swipe-up; Magnitude: 17
+Gesture: swipe-up; Magnitude: 23
+Gesture: swipe-up; Magnitude: 24
+Gesture: swipe-up; Magnitude: 22
+Gesture: swipe-up; Magnitude: 20
+Gesture: swipe-up; Magnitude: 18
+Gesture: swipe-up; Magnitude: 16
+Gesture: swipe-up; Magnitude: 14
+Gesture: swipe-up; Magnitude: 12
+Gesture: swipe-up; Magnitude: 10
+Gesture: swipe-up; Magnitude: 7
+Gesture: swipe-up; Magnitude: 3
+Gesture: swipe-up; Magnitude: 1
+Gesture: none; Magnitude: 0
+Button.left released at 876, 372
+Movement vector -17, -233 in 533 ms; Gesture: swipe
+Button.left pressed at 883, 312
+Gesture: none; Magnitude: 0
+Gesture: swipe-down; Magnitude: 1
+Gesture: swipe-down; Magnitude: 3
+Gesture: swipe-down; Magnitude: 7
+Gesture: swipe-down; Magnitude: 13
+Gesture: swipe-down; Magnitude: 15
+Gesture: swipe-down; Magnitude: 16
+Gesture: swipe-down; Magnitude: 17
+Gesture: swipe-down; Magnitude: 19
+Gesture: swipe-down; Magnitude: 18
+Gesture: swipe-down; Magnitude: 17
+Gesture: swipe-down; Magnitude: 15
+Gesture: swipe-down; Magnitude: 12
+Gesture: swipe-down; Magnitude: 10
+Gesture: swipe-down; Magnitude: 8
+Gesture: swipe-down; Magnitude: 7
+Gesture: swipe-down; Magnitude: 4
+Gesture: swipe-down; Magnitude: 3
+Gesture: swipe-down; Magnitude: 2
+Gesture: swipe-down; Magnitude: 1
+Gesture: swipe-down; Magnitude: 1
+Gesture: swipe-down; Magnitude: 2
+Gesture: swipe-down; Magnitude: 2
+Gesture: swipe-down; Magnitude: 2
+Gesture: swipe-down; Magnitude: 3
+Gesture: swipe-down; Magnitude: 3
+Gesture: swipe-down; Magnitude: 4
+Gesture: swipe-down; Magnitude: 4
+Gesture: swipe-down; Magnitude: 3
+Gesture: swipe-down; Magnitude: 3
+Gesture: swipe-down; Magnitude: 1
+Gesture: swipe-down; Magnitude: 1
+Button.left released at 931, 529
+Movement vector 48, 217 in 650 ms; Gesture: swipe
+Button.left pressed at 793, 511
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: swipe-up; Magnitude: 1
+Gesture: swipe-up; Magnitude: 1
+Gesture: swipe-up; Magnitude: 1
+Gesture: swipe-up; Magnitude: 1
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Button.left released at 1248, 500
+Movement vector 455, -11 in 550 ms; Gesture: swipe
+Button.left pressed at 1409, 472
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Button.left released at 641, 466
+Movement vector -768, -6 in 449 ms; Gesture: tap
+Button.right pressed at 886, 463
+Button.right released at 886, 463
+Movement vector 0, 0 in 146 ms; Gesture: tap
+Button.left pressed at 808, 447
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Button.left released at 808, 447
+Movement vector 0, 0 in 166 ms; Gesture: tap
+Button.left pressed at 808, 447
+Button.left released at 808, 447
+Movement vector 0, 0 in 1399 ms; Gesture: longtap
+Button.left pressed at 801, 447
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Button.left released at 801, 447
+Movement vector 0, 0 in 150 ms; Gesture: tap
+Button.left pressed at 801, 447
+Button.left released at 801, 447
+Movement vector 0, 0 in 133 ms; Gesture: tap
+Button.left pressed at 801, 447
+Gesture: none; Magnitude: 0
+Gesture: swipe-down; Magnitude: 1
+Gesture: swipe-down; Magnitude: 1
+Gesture: swipe-down; Magnitude: 4
+Gesture: swipe-down; Magnitude: 9
+Gesture: swipe-down; Magnitude: 12
+Gesture: swipe-down; Magnitude: 16
+Gesture: swipe-down; Magnitude: 17
+Gesture: swipe-down; Magnitude: 14
+Gesture: swipe-down; Magnitude: 10
+Gesture: swipe-down; Magnitude: 6
+Gesture: swipe-down; Magnitude: 2
+Gesture: swipe-down; Magnitude: 1
+Button.left released at 803, 540
+Movement vector 2, 93 in 416 ms; Gesture: swipe
+Button.left pressed at 802, 541
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Button.left released at 802, 541
+Movement vector 0, 0 in 122 ms; Gesture: tap
+Button.left pressed at 802, 541
+Button.left released at 802, 541
+Movement vector 0, 0 in 99 ms; Gesture: tap
+Button.left pressed at 803, 540
+Button.left released at 803, 540
+Movement vector 0, 0 in 99 ms; Gesture: tap
+Button.left pressed at 803, 540
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Button.left released at 803, 539
+Movement vector 0, -1 in 917 ms; Gesture: tap
+Button.left pressed at 822, 587
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: swipe-up; Magnitude: 1
+Gesture: swipe-up; Magnitude: 3
+Gesture: swipe-up; Magnitude: 7
+Gesture: swipe-up; Magnitude: 10
+Gesture: swipe-up; Magnitude: 14
+Gesture: swipe-up; Magnitude: 22
+Gesture: swipe-up; Magnitude: 31
+Gesture: swipe-up; Magnitude: 32
+Gesture: swipe-up; Magnitude: 36
+Gesture: swipe-up; Magnitude: 31
+Gesture: swipe-up; Magnitude: 17
+Gesture: swipe-up; Magnitude: 14
+Gesture: swipe-up; Magnitude: 11
+Gesture: swipe-up; Magnitude: 7
+Gesture: swipe-up; Magnitude: 3
+Gesture: none; Magnitude: 0
+Button.left released at 801, 332
+Movement vector -21, -255 in 400 ms; Gesture: swipe
+Button.left pressed at 786, 241
+Gesture: none; Magnitude: 0
+Gesture: none; Magnitude: 0
+Gesture: swipe-down; Magnitude: 1
+Gesture: swipe-down; Magnitude: 1
+Gesture: swipe-down; Magnitude: 2
+Gesture: swipe-down; Magnitude: 5
+Gesture: swipe-down; Magnitude: 8
+Gesture: swipe-down; Magnitude: 13
+Gesture: swipe-down; Magnitude: 19
+Gesture: swipe-down; Magnitude: 25
+Gesture: swipe-down; Magnitude: 28
+Gesture: swipe-down; Magnitude: 32
+Gesture: swipe-down; Magnitude: 37
+Gesture: swipe-down; Magnitude: 38
+Gesture: swipe-down; Magnitude: 32
+Gesture: swipe-down; Magnitude: 21
+Gesture: swipe-down; Magnitude: 8
+Gesture: swipe-down; Magnitude: 2
+Button.left released at 802, 513
+Movement vector 16, 272 in 483 ms; Gesture: swipe
