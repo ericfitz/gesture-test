@@ -4,9 +4,7 @@ import RPi.GPIO as GPIO
 from smbus import SMBus
 
 logging.basicConfig(
-    level=logging.DEBUG,
-    format="%(asctime)s %(message)s",
-    datefmt="%Y-%m-%dT%H:%M:%S%z"
+    level=logging.DEBUG, format="%(asctime)s %(message)s", datefmt="%Y-%m-%dT%H:%M:%S%z"
 )
 
 logger = logging.getLogger(__name__)
@@ -21,6 +19,7 @@ bus = SMBus(1)
 
 max_touches = 2
 
+
 class TouchData:
     def __init__(self):
         self.Touch = 0
@@ -30,7 +29,7 @@ class TouchData:
         self.X = [0, 1, 2, 3, 4]
         self.Y = [0, 1, 2, 3, 4]
         self.S = [0, 1, 2, 3, 4]
-    
+
 
 # this is a modified version of the GT1151 class from the Waveshare epd2in13 touchpad driver
 # it merges dependent functions into a single class and isolates touchpad functionality
@@ -112,7 +111,11 @@ class GT1151:
                 logger.debug(f"TouchCount: {current_touch.TouchCount}")
 
                 # it might be the right thing to do to set the touch count to 0 here and ignore more than double touch
-                touch_count = max_touches if current_touch.TouchCount > max_touches else current_touch.TouchCount
+                touch_count = (
+                    max_touches
+                    if current_touch.TouchCount > max_touches
+                    else current_touch.TouchCount
+                )
 
                 for i in range(0, touch_count, 1):
                     old_touch.X[i] = current_touch.X[i]
@@ -122,7 +125,9 @@ class GT1151:
                     current_touch.X[i] = (buf[2 + 8 * i] << 8) + buf[1 + 8 * i]
                     current_touch.Y[i] = (buf[4 + 8 * i] << 8) + buf[3 + 8 * i]
                     current_touch.S[i] = (buf[6 + 8 * i] << 8) + buf[5 + 8 * i]
-                    logger.debug(f"Touch {i}:  X: {current_touch.X[i]}, Y:{current_touch.Y[i]}, Pressure:{current_touch.S[i]}")
+                    logger.debug(
+                        f"Touch {i}:  X: {current_touch.X[i]}, Y:{current_touch.Y[i]}, Pressure:{current_touch.S[i]}"
+                    )
 
     def GT_Gesture(self):
         buf = [0x08, 0x00, 0xF8]

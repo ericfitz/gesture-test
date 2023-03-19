@@ -11,6 +11,7 @@ lasty = 0
 inGesture = False  # True if a gesture is in progress
 swiped = False  # True if a swipe has been detected
 
+
 def on_move(x, y):
     # print(f'Pointer moved to {x}, {y}')
     # global lastx, mdeltax
@@ -25,13 +26,15 @@ def on_move(x, y):
     if inGesture:
         # xmag = abs(mdeltax) if abs(mdeltax) > movement_sensitivity else 0
         # if xmag > 0:
-            # xdir = "right" if mdeltax > 0 else "left"
+        # xdir = "right" if mdeltax > 0 else "left"
         ymag = 0 if abs(mdeltay) < movement_sensitivity else int(abs(mdeltay))
 
         ydir = "none"
         if ymag > 0:
-            ydir = "down" if mdeltay > 0 else "up"  # y-axis is inverted vs. cartesian (positive = down)
-        
+            ydir = (
+                "down" if mdeltay > 0 else "up"
+            )  # y-axis is inverted vs. cartesian (positive = down)
+
         if ydir == "up":
             move_gesture = "swipe-up"
             swiped = True
@@ -45,8 +48,7 @@ def on_move(x, y):
 
 
 def on_click(x, y, button, pressed):
-    
-    global presstime, releasetime, deltats, deltatms 
+    global presstime, releasetime, deltats, deltatms
     global startx, deltax
     global starty, deltay
     global inGesture, gesture, swiped
