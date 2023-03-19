@@ -1,3 +1,4 @@
+# monitoring this demo during execution showed that it kept one thread at 100% cpu usage
 from pynput import mouse
 
 

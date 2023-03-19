@@ -1,4 +1,7 @@
-from pynput import mouse
+#!/opt/homebrew/bin/python3
+
+#from pynput import mouse
+from gt1151ef import TouchData, GT1151
 from datetime import datetime
 
 movement_sensitivity = 1  # pixels
