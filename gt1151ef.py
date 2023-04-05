@@ -31,7 +31,7 @@ class TouchData:
         self.S = [0, 1, 2, 3, 4]
 
 
-# this is a modified version of the GT1151 class from the Waveshare epd2in13 touchpad driver
+# this is a modified version of the GT1151 class from the Waveshare epd2in13 software
 # it merges dependent functions into a single class and isolates touchpad functionality
 class GT1151:
     def __init__(self):
@@ -138,7 +138,7 @@ class GT1151:
         logger.debug("Gesture mode started")
         self.delay_ms(1)
 
-    def GT_Gesture_Scan(self, GT_Dev, GT_Old):
+    def GT_Gesture_Scan(self, current_touch, old_touch):
         buf = []
         self.GT_Read(0x814C, buf, 1)
         logger.debug(f"Gesture: {buf}")
@@ -146,9 +146,6 @@ class GT1151:
             logger.debug("Gesture mode exiting")
             GT_Gesture_Mode = 0
             self.GT_Reset()
-            GT_Old.X[0] = GT_Dev.X[0]
-            GT_Old.Y[0] = GT_Dev.Y[0]
-            GT_Old.S[0] = GT_Dev.S[0]
         else:
             buf = 0x00
             self.GT_Write(0x814C, buf, 1)
