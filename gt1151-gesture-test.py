@@ -5,7 +5,7 @@ import logging
 import threading
 
 logging.basicConfig(
-    level=logging.DEBUG, format="%(asctime)s %(message)s", datefmt="%Y-%m-%dT%H:%M:%S%z"
+    level=logging.DEBUG, format="%(asctime)s %(funcName)s %(lineno)d %(message)s", datefmt="%Y-%m-%dT%H:%M:%S%z"
 )
 
 logger = logging.getLogger(__name__)
