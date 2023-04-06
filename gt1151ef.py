@@ -35,9 +35,14 @@ class TouchData:
 # it merges dependent functions into a single class and isolates touchpad functionality
 class GT1151:
     def __init__(self):
-        # TP
         self.TRST = TRST
         self.INT = INT
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setwarnings(False)
+        GPIO.setup(TRST, GPIO.OUT)
+        GPIO.setup(INT, GPIO.IN)
+        # spi.max_speed_hz = 10000000
+        # spi.mode = 0b00
 
     def digital_write(self, pin, value):
         GPIO.output(pin, value)
