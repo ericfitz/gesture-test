@@ -52,7 +52,8 @@ def main():
 
 
     except IOError as e:
-        logging.error(e)
+        logging.exception(e)
+        raise
 
     except KeyboardInterrupt:
         logging.info("ctrl + c:")
