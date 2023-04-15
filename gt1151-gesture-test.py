@@ -12,6 +12,10 @@ logger = logging.getLogger(__name__)
 
 flag_t = 1
 
+gt = GT1151()
+gest_current = TouchData()
+gest_old = TouchData()
+
 def pthread_irq():
     logger.debug("pthread running")
     while flag_t == 1:
@@ -22,16 +26,9 @@ def pthread_irq():
     print("thread:exit")
 
 def main():
-    gt = GT1151()
-
-    gest_current = TouchData()
-    gest_old = TouchData()
-
-
     logger.info("testing gt1151 gesture functionality")
 
     try:
-
         gt.GT_Init()  # initialize GT1151 touch controller
         gt.Gesture()  # enable gesture mode
 

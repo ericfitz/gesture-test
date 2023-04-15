@@ -18,15 +18,18 @@ def on_move(x, y):
     global lasty, mdeltay
     global swiped, inGesture, move_gesture
 
-    # mdeltax = x - lastx
+    mdeltax = int(x - lastx)
     mdeltay = int(y - lasty)
-    # lastx = x
+    lastx = int(x)
     lasty = int(y)
     ymag = 0
     if inGesture:
-        # xmag = abs(mdeltax) if abs(mdeltax) > movement_sensitivity else 0
-        # if xmag > 0:
-        # xdir = "right" if mdeltax > 0 else "left"
+        xmag = abs(mdeltax) if abs(mdeltax) > movement_sensitivity else 0
+        if xmag > 0:
+            xdir = (
+                "right" if mdeltax > 0 else "left"
+            )
+        
         ymag = 0 if abs(mdeltay) < movement_sensitivity else int(abs(mdeltay))
 
         ydir = "none"
@@ -35,14 +38,24 @@ def on_move(x, y):
                 "down" if mdeltay > 0 else "up"
             )  # y-axis is inverted vs. cartesian (positive = down)
 
+        move_gesture = ""
+        if xdir == "left":
+            move_gesture += "swipe-left "
+            swiped = True
+        elif xdir == "right":
+            move_gesture += "swipe-right "
+            swiped = True
+
         if ydir == "up":
-            move_gesture = "swipe-up"
+            move_gesture += "swipe-up"
             swiped = True
         elif ydir == "down":
-            move_gesture = "swipe-down"
+            move_gesture += "swipe-down"
             swiped = True
-        else:
+        
+        if move_gesture == "":
             move_gesture = "none"
+
         print(f"Gesture: {move_gesture}; Magnitude: {ymag}")
     pass
 
