@@ -6,7 +6,7 @@ from datetime import datetime
 movement_sensitivity = 1  # pixels
 longtap_sensitivity = 1000  # ms
 
-# lastx = 0
+lastx = 0
 lasty = 0
 inGesture = False  # True if a gesture is in progress
 swiped = False  # True if a swipe has been detected
@@ -15,7 +15,7 @@ swiped = False  # True if a swipe has been detected
 def on_move(x, y):
     # print(f'Pointer moved to {x}, {y}')
     # global lastx, mdeltax
-    global lasty, mdeltay
+    global lastx, lasty, mdeltax, mdeltay
     global swiped, inGesture, move_gesture
 
     mdeltax = int(x - lastx)
@@ -25,18 +25,16 @@ def on_move(x, y):
     ymag = 0
     if inGesture:
         xmag = abs(mdeltax) if abs(mdeltax) > movement_sensitivity else 0
+        xdir = "none"
         if xmag > 0:
-            xdir = (
-                "right" if mdeltax > 0 else "left"
-            )
-        
+            xdir = "right" if mdeltax > 0 else "left"
+
         ymag = 0 if abs(mdeltay) < movement_sensitivity else int(abs(mdeltay))
 
         ydir = "none"
         if ymag > 0:
-            ydir = (
-                "down" if mdeltay > 0 else "up"
-            )  # y-axis is inverted vs. cartesian (positive = down)
+            ydir = "down" if mdeltay > 0 else "up"
+            # y-axis is inverted vs. cartesian (positive = down)
 
         move_gesture = ""
         if xdir == "left":
@@ -52,7 +50,7 @@ def on_move(x, y):
         elif ydir == "down":
             move_gesture += "swipe-down"
             swiped = True
-        
+
         if move_gesture == "":
             move_gesture = "none"
 
